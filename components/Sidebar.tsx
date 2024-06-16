@@ -1,10 +1,11 @@
 "use client"
 import { navLinks } from '@/constants'
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton, SignInButton} from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import { Button } from './ui/button'
        
 
 const Sidebar = () => {
@@ -67,7 +68,12 @@ const Sidebar = () => {
                 <UserButton afterSignOutUrl='/' showName />
               </li>
             </ul>
-          </SignedIn>
+        </SignedIn>
+        <SignedOut>
+          <Button asChild className="button bg-purple-gradient bg-cover">
+            <Link href="/sign-in">Login</Link>
+          </Button>
+        </SignedOut>
 
         </nav>
       </div>
