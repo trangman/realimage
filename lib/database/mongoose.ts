@@ -24,7 +24,7 @@ if(!cached) {
     cached.promise = 
       cached.promise || 
       mongoose.connect(MONGODB_URL, { 
-        dbName: 'realimage', bufferCommands: false 
+        dbName: 'imaginify', bufferCommands: false 
       })
   
     cached.conn = await cached.promise;
